@@ -1,0 +1,178 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+.profile-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  background: #C49012;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* =========================
+   PROFILE CARD (GLASS)
+========================= */
+.profile-card {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 45px 40px;
+  border-radius: 26px;
+  color: black;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-card h1 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 38px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   PROFILE ROWS
+========================= */
+.profile-row {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 10px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.profile-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-row span {
+  opacity: 0.75;
+  font-size: 15px;
+}
+
+.profile-row p {
+  font-size: 19px;   /* ⬆️ Name & Email size */
+  font-weight: 500;  /* optional: makes it clearer */
+}
+
+
+/* =========================
+   INPUT (EDIT NAME)
+========================= */
+.profile-row input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* =========================
+   EDIT BUTTON
+========================= */
+.profile-row button {
+  background: linear-gradient(135deg, #ffbe33, #f59e0b);
+  border: none;
+  padding: 7px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #1f2933;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-row button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   LOCKED FIELD
+========================= */
+.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.profile-card hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 30px 0;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.stats > div {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.stats h3 {
+  font-size: 36px;
+  color: #ffbe33;
+  margin-bottom: 6px;
+}
+
+.stats p {
+  opacity: 0.8;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 30px 25px;
+  }
+
+  .profile-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .profile-row button {
+    justify-self: flex-start;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

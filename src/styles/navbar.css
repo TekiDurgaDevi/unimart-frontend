@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #2F2B1F;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* 🔥 UPDATED: Home & About (span instead of a) */
+.nav-links span {
+  color: #ffffff;        /* white color */
+  font-weight: 700;      /* slightly bolder */
+  font-size: 20px;       /* increased font size */
+  position: relative;
+  cursor: pointer;
+}
+
+/* ACTIVE STATE */
+.nav-links span.active {
+  color: #ffbe33;
+}
+
+/* UNDERLINE EFFECT */
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: #ffbe33;
+  transition: width 0.3s ease;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+/* LOGIN / REGISTER */
+.auth-combined-btn {
+  background: #ffbe33;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  gap: 5px;
+}
+
+.auth-link {
+  cursor: pointer;
+}
+
+.slash {
+  cursor: default;
+}
+
+/* THREE DOT ICON */
+.three-dot-icon {
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
+.three-dot-menu {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 180px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+.three-dot-menu div {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.three-dot-menu div:hover {
+  background: #ffbe33;
+  color: white;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #ddd;
+}
+
+.logout-item {
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.logout-item:hover {
+  background: #dc2626;
+  color: white;
+}

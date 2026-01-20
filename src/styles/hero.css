@@ -1,0 +1,366 @@
+/* =========================
+   BASE HERO
+========================= */
+
+.navy-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* =========================
+   ANIMATED WAVES
+========================= */
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 45%;
+  opacity: 0.35;
+  animation: waveMove 22s linear infinite;
+}
+
+.wave-1 {
+  background: #0f2027;
+  animation-duration: 26s;
+}
+
+.wave-2 {
+  background: #203a43;
+  animation-duration: 32s;
+}
+
+.wave-3 {
+  background: #2c5364;
+  animation-duration: 38s;
+}
+
+@keyframes waveMove {
+  from {
+    transform: rotate(0deg) translate(-25%, -25%);
+  }
+  to {
+    transform: rotate(360deg) translate(-25%, -25%);
+  }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.navy-particles {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.navy-particles li {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  animation: particleFall 18s linear infinite;
+}
+
+/* random spread illusion */
+.navy-particles li:nth-child(odd) {
+  left: 20%;
+}
+.navy-particles li:nth-child(even) {
+  left: 80%;
+}
+
+@keyframes particleFall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.navy-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  animation: contentRise 1.8s ease forwards;
+}
+
+@keyframes contentRise {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navy-title {
+  font-size: 96px;
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.navy-title span {
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+.navy-title span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.navy-title span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes titleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.accent {
+  color: #ffbe33;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.navy-desc {
+  font-size: 22px;
+  max-width: 640px;
+  margin: 0 auto 42px;
+  color: #e2e8ec;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.navy-actions {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+}
+
+.navy-btn {
+  padding: 18px 46px;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.navy-btn.primary {
+  background: #ffbe33;
+  color: #0f2027;
+  border: none;
+  box-shadow: 0 0 30px rgba(255, 190, 51, 0.6);
+  animation: pulseBtn 2.5s infinite;
+}
+
+@keyframes pulseBtn {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 190, 51, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 190, 51, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 190, 51, 0.5);
+  }
+}
+
+.navy-btn.secondary {
+  background: transparent;
+  border: 2px solid #ffbe33;
+  color: #ffbe33;
+}
+
+.navy-btn:hover {
+  transform: scale(1.12);
+}
+
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.navy-card {
+  position: absolute;
+  padding: 14px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  animation: cardFloat 6s ease-in-out infinite;
+  font-size: 14px;
+}
+
+.card-1 {
+  top: 25%;
+  left: 12%;
+}
+
+.card-2 {
+  bottom: 28%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.card-3 {
+  top: 18%;
+  right: 22%;
+  animation-delay: 2s;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .navy-title {
+    font-size: 56px;
+    flex-direction: column;
+  }
+
+  .navy-actions {
+    flex-direction: column;
+  }
+}
+/* =========================
+   TOASTIFY CUSTOM COLORS
+========================= */
+
+/* Toast body */
+.Toastify__toast {
+  background: #ffbe33 !important; /* Yellow */
+  color: white !important;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* Toast text */
+.Toastify__toast-body {
+  color: white !important;
+}
+
+/* Close button */
+.Toastify__close-button {
+  color: white !important;
+  opacity: 1;
+}
+
+/* Progress bar */
+.Toastify__progress-bar {
+  background: white !important;
+}
+/* =========================
+   HERO BACKGROUND SLIDER
+========================= */
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* CONTENT ABOVE SLIDER */
+.navy-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   DOT NAVIGATION
+========================= */
+
+.hero-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #ffbe33;
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-dots {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
