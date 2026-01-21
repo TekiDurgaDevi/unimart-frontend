@@ -22,10 +22,13 @@ function ResetPassword() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/auth/reset-password", {
-        email,
-        password,
-      });
+      await axios.post(
+        "https://unimart-backend2.vercel.app/api/auth/reset-password",
+        {
+          email,
+          password,
+        }
+      );
 
       toast.success("Password reset successful 🎉");
       navigate("/login");

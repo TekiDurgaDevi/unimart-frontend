@@ -13,9 +13,12 @@ function ForgotPassword() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/auth/forgot-password", {
-        email,
-      });
+      await axios.post(
+        "https://unimart-backend2.vercel.app/api/auth/forgot-password",
+        {
+          email,
+        }
+      );
 
       toast.success("Email verified. Reset your password.");
       navigate("/reset-password", { state: { email } });
