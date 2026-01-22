@@ -40,7 +40,7 @@ function Cart() {
               {cart.map((item) => (
                 <div className="cart-item" key={item._id}>
                   <img
-                    src={`http://localhost:5000/${item.image}`}
+                    src={`https://unimart-backend2-production.up.railway.app/${item.image}`}
                     alt={item.title}
                   />
 
