@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Navbar from "../components/Navbar";
 import "../styles/myProducts.css";
 
+
 function MyProducts() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function MyProducts() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        "https://unimart-backend2.vercel.app/api/products/my/products",
+        "http://localhost:5000/api/products/my/products",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +44,7 @@ function MyProducts() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `https://unimart-backend2.vercel.app/api/products/${id}`,
+        `http://localhost:5000/api/products/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -77,7 +78,7 @@ function MyProducts() {
             {products.map((p) => (
               <div className="product-card" key={p._id}>
                 <img
-                  src={`https://unimart-backend2.vercel.app/${p.image}`}
+                  src={`http://localhost:5000/${p.image}`}
                   alt={p.title}
                 />
 

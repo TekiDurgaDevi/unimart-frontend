@@ -52,16 +52,13 @@ function AddProduct() {
     productData.append("image", formData.image);
 
     try {
-      const res = await fetch(
-        "https://unimart-backend2.vercel.app/api/products",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: productData,
-        }
-      );
+      const res = await fetch("http://localhost:5000/api/products", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: productData,
+      });
 
       const data = await res.json();
 

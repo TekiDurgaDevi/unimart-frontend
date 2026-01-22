@@ -8,7 +8,7 @@ function ProductDetails() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`https://unimart-backend2.vercel.app/api/products/${id}`)
+    fetch(`http://localhost:5000/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.error(err));
@@ -25,29 +25,24 @@ function ProductDetails() {
       <section className="product-details">
         <div className="product-details-card">
           <img
-            src={`https://unimart-backend2.vercel.app/${product.image}`}
+            src={`http://localhost:5000/${product.image}`}
             alt={product.title}
             className="details-image"
           />
+
 
           <div className="product-info">
             <h2>{product.title}</h2>
             <p className="price">₹{product.price}</p>
 
-            <p>
-              <strong>Condition:</strong> {product.condition}
-            </p>
-            <p>
-              <strong>Category:</strong> {product.category}
-            </p>
+            <p><strong>Condition:</strong> {product.condition}</p>
+            <p><strong>Category:</strong> {product.category}</p>
 
             <p className="description">{product.description}</p>
 
             <div className="seller-box">
               <h3>Seller Details</h3>
-              <p>
-                <strong>Name:</strong> {product.seller?.name}
-              </p>
+              <p><strong>Name:</strong> {product.seller?.name}</p>
 
               {/* ✅ ONLY THIS PART CHANGED */}
               <p>
@@ -60,6 +55,7 @@ function ProductDetails() {
                   📧 Contact Seller
                 </a>
               </p>
+
             </div>
           </div>
         </div>

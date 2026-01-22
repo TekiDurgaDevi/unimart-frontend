@@ -27,9 +27,7 @@ function EditProduct() {
 
   const fetchProduct = async () => {
     try {
-      const res = await fetch(
-        `https://unimart-backend2.vercel.app/api/products/${id}`
-      );
+      const res = await fetch(`http://localhost:5000/api/products/${id}`);
       const data = await res.json();
 
       if (!res.ok) {
@@ -88,7 +86,7 @@ function EditProduct() {
 
     try {
       const res = await fetch(
-        `https://unimart-backend2.vercel.app/api/products/${id}`,
+        `http://localhost:5000/api/products/${id}`,
         {
           method: "PUT",
           headers: {
@@ -121,7 +119,7 @@ function EditProduct() {
           {/* 🖼️ CURRENT IMAGE */}
           {currentImage && (
             <img
-              src={`https://unimart-backend2.vercel.app/${currentImage}`}
+              src={`http://localhost:5000/${currentImage}`}
               alt="Current"
               style={{
                 width: "100%",

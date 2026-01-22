@@ -40,7 +40,7 @@ function Cart() {
               {cart.map((item) => (
                 <div className="cart-item" key={item._id}>
                   <img
-                    src={`https://unimart-backend2.vercel.app/${item.image}`}
+                    src={`http://localhost:5000/${item.image}`}
                     alt={item.title}
                   />
 
